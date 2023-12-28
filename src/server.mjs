@@ -1,7 +1,7 @@
 import express from "express";// j'ai utilisé babel pour pouvoir se passer de commonjs et utiliser ecs6
 import cors from "cors";
 import path from "path"
-import "./loadEnvironment.mjs";
+import "../loadEnvironment.mjs";
 import "express-async-errors";
 import posts from "./routes/posts.mjs";
 import { fileURLToPath } from 'url';
@@ -22,7 +22,7 @@ app.use((err, _req, res, next) => {
   res.status(500).send("Uh oh! An unexpected error occured.")
 })
 
-const public_path = path.join(__dirname,'/build');//j'utilise path et express static pour communiquer avec le build de production et les fichiers statiques.
+const public_path = path.join(__dirname,'../build');//j'utilise path et express static pour communiquer avec le build de production et les fichiers statiques.
 app.use(express.static(public_path));
 app.get("*", (_,res)=>{
   res.sendFile(path.join(public_path, "index.html"));

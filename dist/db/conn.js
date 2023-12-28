@@ -1,0 +1,24 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _mongodb = require("mongodb");
+var uri = process.env.STRING_URI;
+var client = new _mongodb.MongoClient(uri, {
+  serverApi: {
+    version: _mongodb.ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true
+  }
+});
+var conn;
+try {
+  conn = await client.connect();
+  console.log("db connectée");
+} catch (e) {
+  console.error(e);
+}
+var getDb = conn.db("Blog");
+var _default = exports["default"] = getDb;
