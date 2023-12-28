@@ -4,11 +4,11 @@ import path from "path"
 import "../loadEnvironment.js";
 import "express-async-errors";
 import posts from "./routes/posts.js";
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 
 const app = express();//application qui s'appuie sur node et sur express pour son déploiement backend.
