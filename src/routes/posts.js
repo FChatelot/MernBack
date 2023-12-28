@@ -1,6 +1,6 @@
 import express from "express";
 import {ObjectId} from "mongodb";
-import db from "../db/conn.mjs";
+import db from "../db/conn.js";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
