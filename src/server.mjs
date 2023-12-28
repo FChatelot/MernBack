@@ -3,7 +3,7 @@ import cors from "cors";
 import path from "path"
 import "../loadEnvironment.js";
 import "express-async-errors";
-import posts from "./routes/posts.js";
+import posts from "./routes/posts.mjs";
 import { fileURLToPath } from 'url';
 
 
