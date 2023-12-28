@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3d85d988.css",
+    "main.js": "/static/js/main.778956bb.js",
+    "static/media/mongodb-icon.svg": "/static/media/mongodb-icon.3914026b1a6d159a1671e33c69b7e9b8.svg",
+    "static/media/nodejs-icon.svg": "/static/media/nodejs-icon.7068aadfcdb86b1c6795fabd079eea33.svg",
+    "static/media/express-icon.svg": "/static/media/express-icon.d0c0a2bbabaf7ea8a671e0bc68c02d3f.svg",
+    "static/media/react-icon.svg": "/static/media/react-icon.f47de7bf451890a9025874e191284092.svg",
+    "static/media/github-logo.svg": "/static/media/github-logo.f1cf0111938a97a879aa8892f1dd14fd.svg",
+    "static/media/linkedin-logo.svg": "/static/media/linkedin-logo.635edb03ec98caf73168991f926bbf3b.svg",
+    "index.html": "/index.html",
+    "static/media/twitch-logo.svg": "/static/media/twitch-logo.9e291ba318a7b2522a38d54931344403.svg",
+    "main.3d85d988.css.map": "/static/css/main.3d85d988.css.map",
+    "main.778956bb.js.map": "/static/js/main.778956bb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d85d988.css",
+    "static/js/main.778956bb.js"
+  ]
+}

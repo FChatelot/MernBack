@@ -1,0 +1,26 @@
+{
+  "name": "js_fullstackwebsite",
+  "version": "1.0.0",
+  "description": "Structure de base de Site FullStack sous M.E.R.N",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node server.mjs"
+  },
+  "author": "Florian Chatelot",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "mongodb": "^6.3.0",
+    "nodemon": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.6"
+  }
+}
