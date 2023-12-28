@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 
 
 const app = express();//application qui s'appuie sur node et sur express pour son déploiement backend.
-const port = 4000;// port du serveur
+const port = process.env.PORT || 4000;// port du serveur
 
 app.use(cors());
 app.use(express.json());

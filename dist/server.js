@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var _filename = (0, _url.fileURLToPath)(import.meta.url);
 var _dirname = _path["default"].dirname(_filename);
 var app = (0, _express["default"])(); //application qui s'appuie sur node et sur express pour son déploiement backend.
-var port = 4000; // port du serveur
+var port = process.env.PORT || 4000; // port du serveur
 
 app.use((0, _cors["default"])());
 app.use(_express["default"].json());
