@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && nodemon --exec babel-node src/server.mjs",
     "build": "babel src -d dist",
-    "serve": "node dist/server.js"
+    "serve": "node dist/server.cjs"
   },
   "author": "Florian Chatelot",
   "license": "ISC",
