@@ -32,5 +32,3 @@ app.listen(port, ()=>{
     console.log(`Server démarré avec succes sur le port: ${port}`);
 });
 
-// https://www.mongodb.com/languages/express-mongodb-rest-api-tutorial
-//https://www.mongodb.com/compatibility/express
