@@ -3,7 +3,6 @@
 var _express = _interopRequireDefault(require("express"));
 var _cors = _interopRequireDefault(require("cors"));
 var _path = _interopRequireDefault(require("path"));
-require("../loadEnvironment.js");
 require("express-async-errors");
 var _posts = _interopRequireDefault(require("./routes/posts.mjs"));
 var _url = require("url");
