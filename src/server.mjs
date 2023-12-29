@@ -2,7 +2,7 @@ import express from "express";// j'ai utilisé babel pour pouvoir se passer de c
 import cors from "cors";
 import path from "path"
 import "express-async-errors";
-import posts from "./routes/posts.mjs";
+import router from "./routes/posts.mjs";
 import { fileURLToPath } from 'url';
 
 
@@ -16,7 +16,7 @@ const port = process.env.PORT || 4000;// port du serveur
 app.use(cors());
 app.use(express.json());
 
-app.use("/post",posts);
+app.use("/post",router);
 
 app.use((err, _req, res, next) => {
   res.status(500).send("Uh oh! An unexpected error occured.")

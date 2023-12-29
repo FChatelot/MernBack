@@ -4,7 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+var _dotenv = _interopRequireDefault(require("dotenv"));
 var _mongodb = require("mongodb");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+_dotenv["default"].config();
 var uri = process.env.STRING_URI;
 var client = new _mongodb.MongoClient(uri, {
   serverApi: {
