@@ -1,7 +1,7 @@
 import express from "express";// j'ai utilisé babel pour pouvoir se passer de commonjs et utiliser ecs6
 import cors from "cors";
 import path from "path"
-import "../loadEnvironment.js";
+import "../loadEnvironment.mjs";
 import "express-async-errors";
 import posts from "./routes/posts.mjs";
 import { fileURLToPath } from 'url';

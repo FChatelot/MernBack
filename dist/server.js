@@ -5,7 +5,7 @@ var _cors = _interopRequireDefault(require("cors"));
 var _path = _interopRequireDefault(require("path"));
 require("../loadEnvironment.js");
 require("express-async-errors");
-var _posts = _interopRequireDefault(require("./routes/posts.js"));
+var _posts = _interopRequireDefault(require("./routes/posts.mjs"));
 var _url = require("url");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 // j'ai utilisé babel pour pouvoir se passer de commonjs et utiliser ecs6
