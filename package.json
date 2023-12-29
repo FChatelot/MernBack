@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Structure de base de Site FullStack sous M.E.R.N",
   "main": "server.js",
-
+  "type":"module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && nodemon --exec babel-node src/server.mjs",
