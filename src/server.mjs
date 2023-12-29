@@ -2,7 +2,7 @@ import express from "express";// j'ai utilisé babel pour pouvoir se passer de c
 import cors from "cors";
 import path from "path"
 import "express-async-errors";
-import router from "./routes/posts.mjs";
+import router from "../src/routes/posts.mjs";
 import { fileURLToPath } from 'url';
 
 
