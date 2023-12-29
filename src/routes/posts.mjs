@@ -1,6 +1,8 @@
 import express from "express";
 import {ObjectId} from "mongodb";
 import db from "../db/conn.mjs";
+
+
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -55,4 +57,4 @@ router.delete("/:id", async (req, res) => {
   res.send(result).status(200);
 });
 
-export default router;
+export default router
