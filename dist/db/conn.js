@@ -18,12 +18,7 @@ var client = new _mongodb.MongoClient(uri, {
 });
 var conn;
 try {
-  conn = await client.connect(function (err, db) {
-    if (err || !db) {
-      return false;
-    }
-    callback(db.db("Blog"));
-  });
+  conn = await client.connect();
   console.log("db connectée");
 } catch (e) {
   console.error(e);

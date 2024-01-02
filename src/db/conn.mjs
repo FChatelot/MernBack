@@ -15,10 +15,7 @@ const client = new MongoClient(uri, {
 
 let conn;
 try{
-    conn = await client.connect((err, db)=>{
-        if (err||!db) {return false}
-        callback(db.db("Blog"))
-    });
+    conn = await client.connect();
     console.log("db connectée");
     
 } catch (e){
