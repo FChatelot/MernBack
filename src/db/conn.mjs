@@ -3,7 +3,7 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 
 dotenv.config();
   
-const uri = process.env.STRING_URI || process.env.KEY || "mongodb+srv://florianchatelot:SK6H61sTcdIMWflr@cluster2.hht7nrq.mongodb.net/?retryWrites=true&w=majority" ;
+const uri = process.env.STRING_URI || process.env.KEY;
 const client = new MongoClient(uri, {
     serverApi: {
         version: ServerApiVersion.v1,
