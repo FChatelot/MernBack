@@ -8,7 +8,7 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 var _mongodb = require("mongodb");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 _dotenv["default"].config();
-var uri = process.env.STRING_URI;
+var uri = process.env.STRING_URI || process.env.KEY;
 var client = new _mongodb.MongoClient(uri, {
   serverApi: {
     version: _mongodb.ServerApiVersion.v1,
