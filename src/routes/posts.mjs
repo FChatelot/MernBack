@@ -1,19 +1,19 @@
 import express from "express";
 import {ObjectId} from "mongodb";
-import getDb from "../db/conn.mjs";
+import db from "../db/conn.mjs";
 
 
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  let collection = await getDb.collection("posts");
+  let collection = await db.collection("posts");
   let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
 
 // This section will help you get a single post by id
 router.get("/:id", async (req, res) => {
-  let collection = await getDb.collection("posts");
+  let collection = await db.collection("posts");
   let query = {_id: new ObjectId(req.params.id)};
   let result = await collection.findOne(query);
 
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
     title: req.body.title,
     content: req.body.content,
   };
-  let collection = await getDb.collection("posts");
+  let collection = await db.collection("posts");
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });
@@ -42,7 +42,7 @@ router.patch("/:id", async (req, res) => {
     }
   };
 
-  let collection = await getDb.collection("posts");
+  let collection = await db.collection("posts");
   let result = await collection.updateOne(query, updates);
   res.send(result).status(200);
 });
@@ -51,7 +51,7 @@ router.patch("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
 
-  const collection = getDb.collection("posts");
+  const collection = db.collection("posts");
   let result = await collection.deleteOne(query);
 
   res.send(result).status(200);

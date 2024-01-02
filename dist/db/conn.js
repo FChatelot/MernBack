@@ -23,5 +23,5 @@ try {
 } catch (e) {
   console.error(e);
 }
-var getDb = conn.db("Blog");
+var getDb = conn.connect("Blog");
 var _default = exports["default"] = getDb;

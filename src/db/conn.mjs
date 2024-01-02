@@ -15,10 +15,11 @@ const client = new MongoClient(uri, {
 
 let conn;
 try{
-    conn = await client.connect();
+    conn = await client.connect("Blog");
     console.log("db connectée");
+    
 } catch (e){
     console.error(e);
-}
-let getDb = conn.db("Blog");
-export default getDb;
+} 
+const db = conn.db("Blog");
+export default db;
