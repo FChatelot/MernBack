@@ -18,10 +18,10 @@ var client = new _mongodb.MongoClient(uri, {
 });
 var conn;
 try {
-  conn = await client.connect();
+  conn = await client.db("Blog");
   console.log("db connectée");
 } catch (e) {
   console.error(e);
 }
-var getDb = conn.connect("Blog");
-var _default = exports["default"] = getDb;
+var db = conn.db("Blog");
+var _default = exports["default"] = db;

@@ -1,5 +1,5 @@
 import express from "express";// j'ai utilisé babel pour pouvoir se passer de commonjs et utiliser ecs6
-
+import router from "./routes/posts.mjs";
 import cors from "cors";
 import path from "path"
 import "express-async-errors";
@@ -18,7 +18,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/post",router);
-import router from "./routes/posts.mjs";
+
 
 
 app.use((err, _req, res, next) => {
