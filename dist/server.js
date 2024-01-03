@@ -2,8 +2,8 @@
 
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 var _url = _interopRequireWildcard(require("url"));
-var _express = _interopRequireDefault(require("express"));
 var _posts = _interopRequireDefault(require("./routes/posts.mjs"));
+var _express = _interopRequireDefault(require("express"));
 var _cors = _interopRequireDefault(require("cors"));
 var _path = _interopRequireDefault(require("path"));
 require("express-async-errors");

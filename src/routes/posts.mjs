@@ -1,7 +1,7 @@
 import express from "express";
 import {ObjectId} from "mongodb";
 import db from "../db/conn.mjs";
-
+import limiter from "../middlewares/ratelimit.mjs";
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ router.get("/:id", async (req, res) => {
 });
 
 // This section will help you create a new post.
-router.post("/", async (req, res) => {
+router.post("/",limiter, async (req, res) => {
   let newDocument = {
     title: req.body.title,
     content: req.body.content,
