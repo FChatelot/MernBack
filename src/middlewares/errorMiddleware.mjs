@@ -15,13 +15,13 @@ const errorHandler = (err, req, res, next) =>{
         message = "Ressource not found";
     }
     res.status(statusCode).json({
-        message
+        message,
+        stack: process.env.NODE_ENV === "production" ? null : err.stack
     })
 
 }
 export  {
     notFound,
     errorHandler
-        }
+    }
 
-        //je dois logiquement l'exporter sur le server.js mais on va attendre parce que j'ai encore des trucs a voir avant
