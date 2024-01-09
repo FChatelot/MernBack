@@ -4,6 +4,8 @@
 //https://github.com/bradtraversy/mern-auth
 //https://www.youtube.com/watch?v=R4AhvYORZRY
 
+//timer de la video 37:20
+
 //https://www.mongodb.com/developer/products/mongodb/mongodb-schema-design-best-practices/
 
 mongodb sans schema
