@@ -1,27 +1,25 @@
-"use strict";
+// import dotenv from "dotenv";
+// import { MongoClient, ServerApiVersion } from "mongodb";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-var _dotenv = _interopRequireDefault(require("dotenv"));
-var _mongodb = require("mongodb");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-_dotenv["default"].config();
-var uri = process.env.STRING_URI || process.env.KEY;
-var client = new _mongodb.MongoClient(uri, {
-  serverApi: {
-    version: _mongodb.ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true
-  }
-});
-var conn;
-try {
-  conn = await client.connect();
-  console.log("db connectée");
-} catch (e) {
-  console.error(e);
-}
-var db = conn.db("Blog");
-var _default = exports["default"] = db;
+// dotenv.config();
+
+// const uri = process.env.STRING_URI || process.env.KEY;
+// const client = new MongoClient(uri, {
+//     serverApi: {
+//         version: ServerApiVersion.v1,
+//         strict: true,
+//         deprecationErrors: true,
+//     }
+// });
+
+// let conn;
+// try{
+//     conn = await client.connect();
+//     console.log("db connectée");
+
+// } catch (e){
+//     console.error(e);
+// } 
+// let db = conn.db("Blog");
+// export default db;
+"use strict";

@@ -11,3 +11,4 @@
 mongodb sans schema
 https://dev.to/kamalhossain/mongodb-without-mongoose-1k69
 https://www.mongodb.com/developer/languages/javascript/mongoose-versus-nodejs-driver/
+https://www.mongodb.com/blog/post/json-schema-validation--locking-down-your-model-the-smart-way

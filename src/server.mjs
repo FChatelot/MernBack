@@ -1,13 +1,15 @@
-import router from "./routes/posts.mjs";
+//import router from "./routes/posts.mjs";
 import users from "./routes/users.mjs";
 import express from "express";// j'ai utilisé babel pour pouvoir se passer de commonjs et utiliser ecs6
 import cors from "cors";
 import path from "path"
 import "express-async-errors";
+import connectDB from "./db/db.mjs";
 import { notFound, errorHandler } from "./middlewares/errorMiddleware.mjs";
-
-
 import { fileURLToPath } from 'url';
+import postRouter from "./routes/tposts.mjs";
+
+connectDB();
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -19,10 +21,12 @@ const port = process.env.PORT || 4000;// port du serveur
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 
 app.use("/api/users", users);
-app.use("/post",router);
-app.use(notFound);
+app.use("/post",postRouter);
+//app.use("/post",router);
+// app.use(notFound);
 app.use(errorHandler);
 
 

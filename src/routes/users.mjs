@@ -11,7 +11,9 @@ import {
 userRouter.post("/", registerUser);
 userRouter.post("/auth", authUser);
 userRouter.post("/logout", logoutUser);
-userRouter.route("/profile").get(getUserProfile).put(updateUserProfile);//je connaissais pas cette methode pour chainer mais tres pratique
+userRouter.route("/profile")
+    .get(getUserProfile)
+    .put(updateUserProfile);//je connaissais pas cette methode pour chainer mais tres pratique
 
 
 
