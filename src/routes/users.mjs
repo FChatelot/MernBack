@@ -7,7 +7,7 @@ import {
     getUserProfile,
     updateUserProfile 
 } from "../controllers/userController.mjs";
-
+//configuration des routes de mon User
 userRouter.post("/", registerUser);
 userRouter.post("/auth", authUser);
 userRouter.post("/logout", logoutUser);

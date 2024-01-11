@@ -1,8 +1,14 @@
 import Post from "../models/postModel.mjs";
 import asyncHandler from 'express-async-handler'
+/**
+ * 
+ * Le postController s'occupe de connecter l'User aux routes.
+ * J'y gère tout mes endpoint et mes requetes.
+ */
+
 //
 //
-//
+//Je GET tout mes posts.
  const getPosts = asyncHandler(async (req, res) => {
  const posts = await Post.find()
   res.status(200).json(posts);
@@ -11,7 +17,7 @@ import asyncHandler from 'express-async-handler'
 
 //
 //
-// This section will help you get a single post by id
+// J'en GET un seul via un id.
  const singlePost = asyncHandler(async (req, res) => {
     const post = await Post.findById(req.params.id);
     if(!post){
@@ -23,7 +29,7 @@ import asyncHandler from 'express-async-handler'
 
 //
 //
-// This section will help you create a new post.
+// Je créé un nouveau post.
 const createPost = asyncHandler(async (req, res) => {
 if(!req.body.title){
     res.status(400);
@@ -38,7 +44,7 @@ if(!req.body.title){
 
 //
 //
-// This section will help you update a post by id.
+// J'Update mon post grace à l'id.
  const updatePost = asyncHandler(async (req, res) => {
     const post = await Post.findById(req.params.id);
     if(!post){
@@ -53,7 +59,7 @@ if(!req.body.title){
 
 //
 //
-// This section will help you delete a post
+// Je delete mon post via cette section.
  const deletePost = asyncHandler(async (req, res) => {
     const post = await Post.findById(req.params.id);
     if(!post){

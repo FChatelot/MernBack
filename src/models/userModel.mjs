@@ -40,36 +40,3 @@ userSchema.pre('save', async function (next) {
 const User = mongoose.model('User', userSchema);
 
 export default User;
-
-
-
-
-// import db from "../db/conn.mjs"
-// db.runCommand({
-//         collMod: "users",
-//         validator: {
-//         $jsonSchema: {
-//             bsonType: "object",
-//             required: ["login", "password", "email"],
-//             additionalProperties: false,
-//             properties: {
-//                 _id: {},
-//                 login: {
-//                     bsonType: "string",
-//                     description: "'login' is required and is a string",
-//                 },
-                
-//                 email: {
-//                     bsonType: "string",
-//                     description: "'email' is required and is one of 'junior', 'mid', or 'senior'",
-//                     unique: true
-//                 },
-//                 password: {
-//                     bsonType: "string",
-//                     description: "'password' is required and is a string",
-//                     minLength: 5
-//                 },
-//             }
-//         }
-//     }
-// }) 

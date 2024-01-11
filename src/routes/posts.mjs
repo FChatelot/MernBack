@@ -7,6 +7,8 @@ import{
     updatePost,
     deletePost
 } from "../controllers/postController.mjs";
+
+//Configuration des routes de mon blog.
 const postRouter = express.Router();
 
 postRouter.route("/")

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+//Schéma de mes posts pour faciliter leurs création dans la mongoDB
 const postSchema = mongoose.Schema(
     {
       title: {

@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _mongoose = _interopRequireDefault(require("mongoose"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+//Schéma de mes posts pour faciliter leurs création dans la mongoDB
 var postSchema = _mongoose["default"].Schema({
   title: {
     type: String,
