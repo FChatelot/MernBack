@@ -3,6 +3,8 @@
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 var _url = _interopRequireWildcard(require("url"));
 var _express = _interopRequireDefault(require("express"));
+var _dotenv = _interopRequireDefault(require("dotenv"));
+var _cookieParser = _interopRequireDefault(require("cookie-parser"));
 var _cors = _interopRequireDefault(require("cors"));
 var _path = _interopRequireDefault(require("path"));
 require("express-async-errors");
@@ -15,6 +17,7 @@ function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return 
 function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 // j'ai utilisé babel pour pouvoir se passer de commonjs et utiliser ecs6
 
+_dotenv["default"].config();
 (0, _db["default"])();
 var _filename = (0, _url.fileURLToPath)(_url["default"].pathToFileURL(_filename).toString());
 var _dirname = _path["default"].dirname(_filename);
@@ -26,6 +29,7 @@ app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: true
 }));
+app.use((0, _cookieParser["default"])());
 app.use("/api/users", _users["default"]);
 app.use("/post", _posts["default"]);
 // app.use(notFound);

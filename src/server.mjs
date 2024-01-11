@@ -1,4 +1,7 @@
 import express from "express";// j'ai utilisé babel pour pouvoir se passer de commonjs et utiliser ecs6
+import dotenv from "dotenv";
+dotenv.config()
+import cookieParser from"cookie-parser";
 import cors from "cors";
 import path from "path"
 import "express-async-errors";
@@ -21,6 +24,8 @@ const port = process.env.PORT || 4000;// port du serveur
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+app.use(cookieParser())
 
 app.use("/api/users", users);
 app.use("/post",postRouter);

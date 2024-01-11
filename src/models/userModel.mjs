@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
-
+//Notre schema utilisateur
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -22,12 +22,12 @@ const userSchema = mongoose.Schema(
   }
 );
 
-// Match user entered password to hashed password in database
+// Comparaison des mots de passes pour voir si ils correspondent
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-// Encrypt password using bcrypt
+// Encryptage des MDP via Bcrypt
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     next();
