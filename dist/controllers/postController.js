@@ -5,7 +5,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.updatePost = exports.singlePost = exports.getPosts = exports.deletePost = exports.createPost = void 0;
-var _ratelimit = _interopRequireDefault(require("../middlewares/ratelimit.mjs"));
 var _postModel = _interopRequireDefault(require("../models/postModel.mjs"));
 var _expressAsyncHandler = _interopRequireDefault(require("express-async-handler"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -72,7 +71,7 @@ var singlePost = exports.singlePost = (0, _expressAsyncHandler["default"])( /*#_
 //
 //
 // This section will help you create a new post.
-var createPost = exports.createPost = (0, _expressAsyncHandler["default"])(_ratelimit["default"], /*#__PURE__*/function () {
+var createPost = exports.createPost = (0, _expressAsyncHandler["default"])( /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(req, res) {
     var post;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
@@ -86,7 +85,7 @@ var createPost = exports.createPost = (0, _expressAsyncHandler["default"])(_rate
           throw new Error("Merci d'ajouter un titre.");
         case 3:
           _context3.next = 5;
-          return _postModel["default"].save({
+          return _postModel["default"].create({
             title: req.body.title,
             content: req.body.content
           });
@@ -125,7 +124,7 @@ var updatePost = exports.updatePost = (0, _expressAsyncHandler["default"])( /*#_
           throw new Error("Post non trouvé.");
         case 6:
           _context4.next = 8;
-          return _postModel["default"].findByIdandUpdate(req.params.id, req.body, {
+          return _postModel["default"].findByIdAndUpdate(req.params.id, req.body, {
             "new": true
           });
         case 8:
@@ -162,10 +161,13 @@ var deletePost = exports.deletePost = (0, _expressAsyncHandler["default"])( /*#_
           res.status(400);
           throw new Error("Post non trouvé.");
         case 6:
+          _context5.next = 8;
+          return post.deleteOne();
+        case 8:
           res.status(200).json({
             id: req.params.id
           });
-        case 7:
+        case 9:
         case "end":
           return _context5.stop();
       }

@@ -7,7 +7,7 @@ import "express-async-errors";
 import connectDB from "./db/db.mjs";
 import { notFound, errorHandler } from "./middlewares/errorMiddleware.mjs";
 import { fileURLToPath } from 'url';
-import postRouter from "./routes/tposts.mjs";
+import postRouter from "./routes/posts.mjs";
 
 connectDB();
 
