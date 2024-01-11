@@ -49,7 +49,7 @@ const registerUser = asyncHandler(async (req,res) =>{
         email,
         password
       });
-      //Connection à l'User?
+      //Connection à l'User.
       if (user) {
         generateToken(res, user._id)
 
@@ -78,6 +78,7 @@ const logoutUser = asyncHandler(async (req,res) =>{
 //route GET /api/users/profile
 //@acces Private
 const getUserProfile = asyncHandler(async (req,res) =>{
+  //Obtenir les infos de l'utilisateur une fois connecté à son profil.
       const user = {
         _id: req.user._id,
         name: req.user.name,
@@ -91,10 +92,11 @@ const getUserProfile = asyncHandler(async (req,res) =>{
 //@acces Private
 const updateUserProfile = asyncHandler(async (req,res) =>{
     const user = await User.findById (req.user._id);
+    //Mettre à jour le name et l'email.
     if(user){
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
-      
+      //Mettre à jour le mot de passe.
       if(req.body.password){
         user.password = req.body.password;
       }
