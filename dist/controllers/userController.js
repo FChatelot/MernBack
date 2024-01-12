@@ -162,6 +162,7 @@ var getUserProfile = exports.getUserProfile = (0, _expressAsyncHandler["default"
     return _regeneratorRuntime().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
+          //Obtenir les infos de l'utilisateur une fois connecté à son profil.
           user = {
             _id: req.user._id,
             name: req.user.name,
@@ -198,6 +199,7 @@ var updateUserProfile = exports.updateUserProfile = (0, _expressAsyncHandler["de
           }
           user.name = req.body.name || user.name;
           user.email = req.body.email || user.email;
+          //Mettre à jour le mot de passe.
           if (req.body.password) {
             user.password = req.body.password;
           }
