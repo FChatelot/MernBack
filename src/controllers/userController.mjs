@@ -119,4 +119,4 @@ export  {
     logoutUser,
     getUserProfile,
     updateUserProfile
-}
+};
