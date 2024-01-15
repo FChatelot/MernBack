@@ -30,11 +30,6 @@ app.use(_express["default"].urlencoded({
   extended: true
 }));
 app.use((0, _cookieParser["default"])());
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 app.use("/api/users", _users["default"]);
 app.use("/post", _posts["default"]);
 //app.use(notFound);
