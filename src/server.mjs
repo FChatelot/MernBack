@@ -29,7 +29,7 @@ app.use(cookieParser())
 
 app.use("/api/users", users);
 app.use("/post",postRouter);
-// app.use(notFound);
+app.use(notFound);
 app.use(errorHandler);
 
 
