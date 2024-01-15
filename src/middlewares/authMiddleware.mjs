@@ -16,11 +16,11 @@ const protect = asyncHandler(async(req, res, next)=>{
             next();//une erreur était causée sur postman car j'avais oublié de faire le callback de nex pour qu'il transmette l'info.
         } catch(error) {
             res.status(401);
-            throw new Error("Non autorisé, jeton invalide");
+            throw new Error("Acces non autorisé");
         }
     }else{
         res.status(401);
-        throw new Error("Non autorisé, pas de jeton");
+        throw new Error("Acces non autorisé");
     }
 });
 export { protect }
