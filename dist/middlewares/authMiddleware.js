@@ -37,13 +37,13 @@ var protect = exports.protect = (0, _expressAsyncHandler["default"])( /*#__PURE_
           _context.prev = 10;
           _context.t0 = _context["catch"](2);
           res.status(401);
-          throw new Error("Non autorisé, jeton invalide");
+          throw new Error("Acces non autorisé");
         case 14:
           _context.next = 18;
           break;
         case 16:
           res.status(401);
-          throw new Error("Non autorisé, pas de jeton");
+          throw new Error("Acces non autorisé");
         case 18:
         case "end":
           return _context.stop();

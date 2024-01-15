@@ -32,7 +32,7 @@ app.use(_express["default"].urlencoded({
 app.use((0, _cookieParser["default"])());
 app.use("/api/users", _users["default"]);
 app.use("/post", _posts["default"]);
-// app.use(notFound);
+app.use(_errorMiddleware.notFound);
 app.use(_errorMiddleware.errorHandler);
 app.use(function (err, _req, res, next) {
   res.status(500).send("Uh oh! An unexpected error occured.");
