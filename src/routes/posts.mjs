@@ -7,16 +7,16 @@ import{
     updatePost,
     deletePost
 } from "../controllers/postController.mjs";
-
+import { protect } from "../middlewares/authMiddleware.mjs";
 //Configuration des routes de mon blog.
 const postRouter = express.Router();
 
 postRouter.route("/")
-    .get(getPosts)
-    .post(limiter, createPost);
+    .get(protect,getPosts)
+    .post( protect, limiter, createPost);
 postRouter.route("/:id")
-    .get(singlePost)
-    .patch(updatePost)
-    .delete(deletePost);
+    .get(protect, singlePost)
+    .patch(protect, updatePost)
+    .delete(protect, deletePost);
 
 export default postRouter
