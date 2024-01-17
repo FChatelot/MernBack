@@ -22,8 +22,8 @@ const app = express();//application qui s'appuie sur node et sur express pour so
 const port = process.env.PORT || 4000;// port du serveur
 
 var corsOptions = {
-  origin: process.env.URL_SITE,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  origin: "*",
+  methods: "OPTIONS,GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 200
 
