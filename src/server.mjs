@@ -21,21 +21,15 @@ const __dirname = path.dirname(__filename);
 const app = express();//application qui s'appuie sur node et sur express pour son déploiement backend.
 const port = process.env.PORT || 4000;// port du serveur
 
-var corsOptions = {
-  origin: "*",
-  methods: "OPTIONS,GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 200
 
-}
 
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(cookieParser())
 
-app.use("/api/users", users);
+app.use("/api/users",cors(),users);
 app.use("/post",postRouter);
 
 
