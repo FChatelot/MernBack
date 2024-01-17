@@ -22,7 +22,7 @@ const app = express();//application qui s'appuie sur node et sur express pour so
 const port = process.env.PORT || 4000;// port du serveur
 
 var corsOptions = {
-  origin: "http://localhost:3000" || process.env.URL_SITE,
+  origin: process.env.URL_SITE,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 200
