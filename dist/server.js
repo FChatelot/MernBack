@@ -24,7 +24,13 @@ var _dirname = _path["default"].dirname(_filename);
 var app = (0, _express["default"])(); //application qui s'appuie sur node et sur express pour son déploiement backend.
 var port = process.env.PORT || 4000; // port du serveur
 
-app.use((0, _cors["default"])());
+var corsOptions = {
+  origin: "http://localhost:3000" || process.env.URL_SITE,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use((0, _cors["default"])(corsOptions));
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: true
