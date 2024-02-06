@@ -11,7 +11,7 @@ import { fileURLToPath } from 'url';
 import users from "./routes/users.mjs";
 import postRouter from "./routes/posts.mjs";
 
-connectDB();
+connectDB();// connexion a la base de données
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -23,17 +23,17 @@ const port = process.env.PORT || 4000;// port du serveur
 
 
 
-app.use(cors());
+app.use(cors()); //ajout de cors qui gère l'intégration des applications et permet de gérer les headers.
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(cookieParser())
 
-app.use("/api/users",cors(),users);
-app.use("/post",postRouter);
+app.use("/api/users",cors(),users); //Connexions à nos routes utilisateurs.
+app.use("/post",postRouter);// connexions à nos routes posts.
 
 
-app.use(errorHandler);
+app.use(errorHandler);//gestionnaire d'erreurs.
 
 
 app.use((err, _req, res, next) => {

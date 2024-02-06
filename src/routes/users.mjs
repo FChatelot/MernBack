@@ -8,7 +8,7 @@ import {
     updateUserProfile 
 } from "../controllers/userController.mjs";
 import { protect } from "../middlewares/authMiddleware.mjs";
-//configuration des routes de mon User
+//configuration des routes d'auhthentification.
 userRouter.post("/", registerUser);
 userRouter.post("/auth", authUser);
 userRouter.post("/logout", logoutUser);
