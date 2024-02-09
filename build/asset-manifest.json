@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.960bd81f.css",
-    "main.js": "/static/js/main.6f46478e.js",
+    "main.js": "/static/js/main.5c2af9d4.js",
     "static/media/mongodb-icon.svg": "/static/media/mongodb-icon.3914026b1a6d159a1671e33c69b7e9b8.svg",
     "static/media/nodejs-icon.svg": "/static/media/nodejs-icon.7068aadfcdb86b1c6795fabd079eea33.svg",
     "static/media/express-icon.svg": "/static/media/express-icon.d0c0a2bbabaf7ea8a671e0bc68c02d3f.svg",
@@ -11,10 +11,10 @@
     "index.html": "/index.html",
     "static/media/twitch-logo.svg": "/static/media/twitch-logo.9e291ba318a7b2522a38d54931344403.svg",
     "main.960bd81f.css.map": "/static/css/main.960bd81f.css.map",
-    "main.6f46478e.js.map": "/static/js/main.6f46478e.js.map"
+    "main.5c2af9d4.js.map": "/static/js/main.5c2af9d4.js.map"
   },
   "entrypoints": [
     "static/css/main.960bd81f.css",
-    "static/js/main.6f46478e.js"
+    "static/js/main.5c2af9d4.js"
   ]
 }
